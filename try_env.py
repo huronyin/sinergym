@@ -5,7 +5,7 @@ import sinergym
 from sinergym.utils.wrappers import (LoggerWrapper, NormalizeAction,
                                      NormalizeObservation)
 
-# Creating environment and applying wrappers for normalization and logging
+# Creating environment and applying wrappers for normalization and logging 1
 env = gym.make('Eplus-5zone-hot-continuous-stochastic-v1')
 env = NormalizeAction(env)
 env = NormalizeObservation(env)
