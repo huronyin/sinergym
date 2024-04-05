@@ -1,12 +1,12 @@
 {
-  "id_base": "sitdown_restaurant",
+  "id_base": "simple_office",
 
-  "building_file": "ASHRAE901_RestaurantSitDown_STD2019_Denver.epJSON",
+  "building_file": "AirflowNetwork_Simple_SmallOffice.epJSON",
 
   "weather_specification": {
     "weather_files": [
       "USA_AZ_Davis-Monthan.AFB.722745_TMY3.epw",
-      "USA_CO_Aurora-Buckley.Field.ANGB.724695_TMY3.epw",
+      "SA_IL_Chicago-Midway.AP.725340_TMY3.epw",
       "CAN_BC_Vancouver.718920_CWEC.epw"
     ],
     "keys": ["hot", "mixed", "cool"]
@@ -14,7 +14,7 @@
 
   "config_params": null,
 
-  "variation": [1.0, 0.0, 0.001], 
+  "variation": [1.0, 0.0, 0.001],
 
   "max_ep_data_store_num": 10,
 
@@ -47,23 +47,23 @@
     },
     "Zone Thermostat Heating Setpoint Temperature": {
       "variable_names": "htg_setpoint",
-      "keys": "DINING"
+      "keys": ["WEST ZONE", "EAST ZONE", "NORTH ZONE"]
     },
     "Zone Thermostat Cooling Setpoint Temperature": {
       "variable_names": "clg_setpoint",
-      "keys": "DINING"
+      "keys": ["WEST ZONE", "EAST ZONE", "NORTH ZONE"]
     },
     "Zone Air Temperature": {
       "variable_names": "air_temperature",
-      "keys": "DINING"
+      "keys": ["WEST ZONE", "EAST ZONE", "NORTH ZONE"]
     },
     "Zone Air Relative Humidity": {
       "variable_names": "air_humidity",
-      "keys": "DINING"
+      "keys": ["WEST ZONE", "EAST ZONE", "NORTH ZONE"]
     },
     "Zone People Occupant Count": {
       "variable_names": "people_occupant",
-      "keys": "DINING"
+      "keys": ["WEST ZONE", "EAST ZONE", "NORTH ZONE"]
     },
     "Facility Total HVAC Electricity Demand Rate": {
       "variable_names": "HVAC_electricity_demand_rate",
@@ -76,12 +76,12 @@
   },
 
   "actuators": {
-    "HTGSETP_SCH_NO_OPTIMUM": {
+    "Dual Heating Setpoints": {
       "variable_name": "Heating_Setpoint_RL",
       "element_type": "Schedule:Compact",
       "value_type": "Schedule Value"
     },
-    "CLGSETP_SCH_NO_OPTIMUM": {
+    "Dual Cooling Setpoints": {
       "variable_name": "Cooling_Setpoint_RL",
       "element_type": "Schedule:Compact",
       "value_type": "Schedule Value"
@@ -95,7 +95,11 @@
   "reward": "LinearReward",
 
   "reward_kwargs": {
-    "temperature_variables": ["air_temperature"],
+    "temperature_variables": [
+      "west_zone_air_temperature",
+      "east_zone_air_temperature",
+      "north_zone_air_temperature"
+    ],
     "energy_variables": ["HVAC_electricity_demand_rate"],
     "range_comfort_winter": [20.0, 23.5],
     "range_comfort_summer": [23.0, 26.0],
