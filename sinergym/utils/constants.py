@@ -181,6 +181,30 @@ def DEFAULT_RADIANT_DISCRETE_FUNCTION(
     action[5] += 25
     return list(action)
 
+# NOTE: The restaurant is NEW.
+# ----------------------------------RESTAURANT--------------------------------- #
+
+
+def DEFAULT_SITDOWN_RESTAURANT_DISCRETE_FUNCTION(action: int) -> List[float]:
+    # SB3 algotihms returns a ndarray instead of a int
+    if isinstance(action, np.ndarray):
+        action = int(action.item())
+
+    mapping = {
+        0: [15, 30],
+        1: [16, 29],
+        2: [17, 28],
+        3: [18, 27],
+        4: [19, 26],
+        5: [20, 25],
+        6: [21, 24],
+        7: [22, 23],
+        8: [22.5, 22.5],
+        # 9: [21, 22.5]
+    }
+
+    return mapping[action]
+
 
 # ----------------------------------HOSPITAL--------------------------------- #
 # DEFAULT_HOSPITAL_OBSERVATION_VARIABLES = [
