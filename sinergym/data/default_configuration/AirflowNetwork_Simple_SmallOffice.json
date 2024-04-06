@@ -47,11 +47,11 @@
     },
     "Zone Thermostat Heating Setpoint Temperature": {
       "variable_names": "htg_setpoint",
-      "keys": ["WEST ZONE", "EAST ZONE", "NORTH ZONE"]
+      "keys": "WEST ZONE"
     },
     "Zone Thermostat Cooling Setpoint Temperature": {
       "variable_names": "clg_setpoint",
-      "keys": ["WEST ZONE", "EAST ZONE", "NORTH ZONE"]
+      "keys": "WEST ZONE"
     },
     "Zone Air Temperature": {
       "variable_names": "air_temperature",
