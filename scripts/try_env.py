@@ -6,13 +6,13 @@ import sinergym
 from sinergym.utils.wrappers import (LoggerWrapper, NormalizeAction,
                                      NormalizeObservation)
 
-env = gym.make('Eplus-demo-v1')
+env = gym.make('Eplus-5zone-hot-continuous-stochastic-v1')
 env = NormalizeAction(env)
 env = NormalizeObservation(env)
 env = NormalizeReward(env)
 env = LoggerWrapper(env)
 
-for i in range(1):
+for i in range(10):
     obs, info = env.reset()
     rewards = []
     truncated = terminated = False
