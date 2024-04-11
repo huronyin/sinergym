@@ -268,7 +268,7 @@
             "supplemental_heating_coil_object_type": "Coil:Heating:Fuel",
             "supply_air_fan_name": "PSZ-AC:3 Fan",
             "supply_air_fan_object_type": "Fan:OnOff",
-            "supply_air_fan_operating_mode_schedule_name": "HVACOperationSchd"
+            "supply_air_fan_operating_mode_schedule_name": "HVACOperationSchd_w_SB"
         },
         "PSZ-AC:4_HeatPump": {
             "air_inlet_node_name": "PSZ-AC:4_OA-PSZ-AC:4_FanNode",
@@ -4681,7 +4681,7 @@
             "fraction_radiant": 0.3,
             "mean_radiant_temperature_calculation_type": "ZoneAveraged",
             "number_of_people_calculation_method": "Area/Person",
-            "number_of_people_schedule_name": "BLDG_OCC_SCH_wo_SB",
+            "number_of_people_schedule_name": "BLDG_OCC_SCH_w_SB",
             "sensible_heat_fraction": "Autocalculate",
             "zone_or_zonelist_or_space_or_spacelist_name": "Perimeter_ZN_2"
         },
@@ -9474,8 +9474,8 @@
             "heating_setpoint_temperature_schedule_name": "HTGSETP_SCH_NO_OPTIMUM"
         },
         "Perimeter_ZN_2 DualSPSched": {
-            "cooling_setpoint_temperature_schedule_name": "CLGSETP_SCH_NO_OPTIMUM",
-            "heating_setpoint_temperature_schedule_name": "HTGSETP_SCH_NO_OPTIMUM"
+            "cooling_setpoint_temperature_schedule_name": "CLGSETP_SCH_NO_OPTIMUM_w_SB",
+            "heating_setpoint_temperature_schedule_name": "HTGSETP_SCH_NO_OPTIMUM_w_SB"
         },
         "Perimeter_ZN_3 DualSPSched": {
             "cooling_setpoint_temperature_schedule_name": "CLGSETP_SCH_NO_OPTIMUM",
