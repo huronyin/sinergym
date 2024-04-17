@@ -1,18 +1,18 @@
 {
     "id": "PPOExperimentExample",
-    "environment": "Eplus-5zone-hot-continuous-stochastic-v1",
-    "episodes": 5,
+    "environment": "Eplus-small_office-hot-discrete-stochastic-v1",
+    "episodes": 10,
     "algorithm": {
         "name": "SB3-PPO",
         "log_interval": 1,
         "parameters": {
             "policy": "MlpPolicy",
-            "learning_rate": 0.0003,
-            "n_steps": 2048,
-            "batch_size": 64,
-            "n_epochs": 10,
-            "gamma": 0.99,
-            "gae_lambda": 0.95,
+            "learning_rate": 0.001,
+            "n_steps": 4096,
+            "batch_size": 128,
+            "n_epochs": 15,
+            "gamma": 0.9,
+            "gae_lambda": 0.9,
             "clip_range": 0.2,
             "clip_range_vf": null,
             "normalize_advantage": true,
@@ -28,7 +28,7 @@
             "tensorboard_log": null,
             "policy_kwargs": null,
             "verbose": 1,
-            "seed": null,
+            "seed": 3,
             "device": "auto",
             "_init_setup_model": true
         }
@@ -53,10 +53,10 @@
     "wandb": {
         "init_params": {
             "project": "sinergym",
-            "entity": "alex_ugr"
+            "entity": "huron-yin"
         },
         "artifact_name": "experiment_PPO",
         "artifact_type": "training",
-        "dump_frequency": 500
+        "dump_frequency": 1000
     }
 }

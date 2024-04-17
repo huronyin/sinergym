@@ -104,7 +104,6 @@ args = parser.parse_args()
 
 with open(args.configuration) as json_conf:
     conf = json.load(json_conf)
-
 try:
     # ---------------------------------------------------------------------------- #
     #                               Register run name                              #
